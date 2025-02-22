@@ -4,7 +4,7 @@
       "Name": "pop-webapp server1",
       "Group": "Server Group 1",
       "Port": 5432,
-      "Host": "localhost",
+      "Host": "odoo-database",
       "Username": "odoo",
       "Password": "pwdodoo",
       "SSLMode": "prefer",

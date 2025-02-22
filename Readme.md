@@ -6,9 +6,9 @@
 ## Partie 1: Dockeriser le site vitrine (webapp)
 ### - Ecrire le dockerfile
 
-Build: **docker build -t test-webapp .**
+Build: **docker build -t pop-webapp:1.0 .**
 
-RUN: **docker run -d -p 8080:8080 test-webapp**
+RUN: **docker run -d -p 8080:8080 pop-webapp:1.0**
 
 ### - Ecrire les compose files
 Suivre l'ordre pour lancer les services
