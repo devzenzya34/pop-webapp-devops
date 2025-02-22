@@ -1,0 +1,15 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "pop-webapp server1",
+      "Group": "Server Group 1",
+      "Port": 5432,
+      "Host": "localhost",
+      "Username": "odoo",
+      "Password": "pwdodoo",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres",
+    },
+  }
+}
+

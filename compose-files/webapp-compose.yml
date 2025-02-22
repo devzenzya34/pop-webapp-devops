@@ -1,0 +1,9 @@
+services:
+  pop-webapp:
+    container_name: pop-webapp
+    ports:
+      - 8080:8080
+    image: pop-webapp:1.0
+    environment:
+      - "ODOO_URL=http://127.0.0.1:8069/"
+      - "PGADMIN_URL=http://127.0.0.1:80"
