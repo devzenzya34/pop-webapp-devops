@@ -1,8 +1,8 @@
 resource "aws_security_group" "sg_pop_project" {
-  name = var.security_group_name
+  name = var.security_groups_name
 
   dynamic "ingress" {
-    for_each = var.security_group_ports
+    for_each = var.security_groups_ports
     content {
       from_port = ingress.value
       to_port = ingress.value
@@ -17,6 +17,6 @@ resource "aws_security_group" "sg_pop_project" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = var.security_group_name
+    Name = var.security_groups_name
   }
 }
