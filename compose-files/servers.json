@@ -8,8 +8,8 @@
       "Username": "odoo",
       "Password": "pwdodoo",
       "SSLMode": "prefer",
-      "MaintenanceDB": "postgres",
-    },
+      "MaintenanceDB": "postgres"
+    }
   }
 }
 

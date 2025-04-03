@@ -8,4 +8,4 @@ services:
     volumes:
       - ./servers.json:/pgadmin4/servers.json
     ports:
-      - 80:80
+      - "80:80"

@@ -11,7 +11,23 @@ Build: **docker build -t pop-webapp:1.0 .**
 RUN: **docker run -d -p 8080:8080 pop-webapp:1.0**
 
 ### - Ecrire les compose files
-Suivre l'ordre pour lancer les services
+configurer le server pour pgadmin comme suit
+{
+  "Servers": {
+    "1": {
+      "Name": "pop-webapp server1",
+      "Group": "Server Group 1",
+      "Port": 5432,
+      "Host": "odoo_database",
+      "Username": "odoo",
+      "Password": "pwdodoo",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres",
+    }
+  }
+}
+
+Lancer les services dans cette ordre:
 - **docker compose -f odoo-compose.yml up -d**
 - **docker compose -f pgadmin-compose.yml up -d**
 - **docker compose -f webapp-compose.yml up -d**

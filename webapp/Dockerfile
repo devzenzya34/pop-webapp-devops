@@ -11,7 +11,7 @@ RUN apt-get update \
 
 COPY .. /opt/
 
-RUN rm -r Readme.md *.pdf
+#RUN rm -r Readme.md *.pdf
 
 ENV ODOO_URL="https://www.odoo.com"
 ENV PGADMIN_URL="https://www.pgadmin.org"
