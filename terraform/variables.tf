@@ -22,7 +22,7 @@ variable "username" {}
 
 # variable "instance_name" {}
 
-# variable "filemane" {}
+# variable "filename" {}
 
 variable "region" {}
 
