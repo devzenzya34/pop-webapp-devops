@@ -1,30 +1,30 @@
 data "aws_ami" "ubuntu" {
-    most_recent = true
-    filter {
-        name   = "name"
-        values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
-    }
-    owners = ["099720109477"] # Canonical
+  most_recent = true
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+  owners = ["099720109477"] # Canonical
 }
 
 locals {
-  ami_id = data.aws_ami.ubuntu.id
-  filename = "./keypair/${var.stack_name}.pem"
+  ami_id        = data.aws_ami.ubuntu.id
+  filename      = "./keypair/${var.stack_name}.pem"
   instance_name = "var.stack_name"
 }
 
 module "keypair" {
-  source = "./modules/keypair"
+  source   = "./modules/keypair"
   key_name = var.stack_name
   filemane = local.filename
 }
 
 module "security_groups" {
-  source = "modules/security_group"
-  protocol = var.protocol
-  security_groups_name = var.security_groups_name
+  source                = "./modules/security_group"
+  protocol              = var.protocol
+  security_groups_name  = var.security_groups_name
   security_groups_ports = var.security_groups_ports
-  depends_on = [ module.keypair ]
+  depends_on            = [module.keypair]
 }
 
 module "ec2_docker" {
@@ -37,7 +37,7 @@ module "ec2_docker" {
   instance_name        = local.instance_name
   instance_type        = var.instance_type
   count                = var.stack_name == "docker" ? 1 : 0
-  depends_on = [ module.keypair ]
+  depends_on           = [module.keypair]
 }
 module "ec2_kubernetes" {
   source               = "./modules/kubernetes"
@@ -49,5 +49,5 @@ module "ec2_kubernetes" {
   instance_name        = local.instance_name
   instance_type        = var.instance_type
   count                = var.stack_name == "kubernetes" ? 1 : 0
-  depends_on = [ module.keypair ]
+  depends_on           = [module.keypair]
 }

@@ -17,7 +17,7 @@ resource "aws_instance" "ec2_pop_project_kubernetes" {
       host = self.public_ip
       private_key = file(var.private_key_path)
     }
-    script = ["./scripts/install_kubernetes.sh"]
+    script = "./scripts/install_kubernetes.sh"
   }
   tags = {
     Name = var.instance_name

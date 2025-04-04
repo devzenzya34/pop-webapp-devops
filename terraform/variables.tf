@@ -1,5 +1,5 @@
 variable "cidr_blocks" {
-    default = ["0.0.0.0/0"]
+  default = ["0.0.0.0/0"]
 }
 
 variable "protocol" {}
