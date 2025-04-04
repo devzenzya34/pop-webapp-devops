@@ -1,0 +1,4 @@
+resources:
+  - pop-webapp-cm.yml
+  - pop-webapp-deploy.yml
+  - pop-webapp-svc.yml
