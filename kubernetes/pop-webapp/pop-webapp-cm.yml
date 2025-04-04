@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pop-webapp-cm
+  namespace: popgroup
+  labels:
+    env: prod
+    app: pop-webapp
+data:
+  odoo_url: http://HOST:30010 # HOST est l'ip du serveur de destination où se trouve l'application
+  pgadmin_url: http://HOST:30011
