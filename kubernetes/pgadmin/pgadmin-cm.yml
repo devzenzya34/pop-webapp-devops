@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pgadmin-cm
+  namespace: popgroup
+  labels:
+    env: prod
+    app: pgadmin
+data:
+  servers.json: |
+    {
+      "Servers": {
+        "1": {
+          "Name": "pop-webapp server1",
+          "Group": "Server Group 1",
+          "Port": 5432,
+          "Host": "postgres-svc",
+          "Username": "odoo",
+          "Password": "pwdodoo",
+          "SSLMode": "prefer",
+          "MaintenanceDB": "postgres"
+        }
+      }
+    }
+  email: pgadmin@webapp.com
