@@ -32,3 +32,17 @@ Lancer les services dans cette ordre:
 - **docker compose -f pgadmin-compose.yml up -d**
 - **docker compose -f webapp-compose.yml up -d**
 
+## Partie 2: Terraform
+### Créer l'arborescence des fichiers
+### Rédiger les différentes modules
+### S'assurer que terraform est bien installer sur la machine de déploiements
+### S'assurer que les accès sont bien configurer sur AWS ( ACCESS_KEY_ID et ACCESS_SECRET_KEY)
+**export AWS_ACCESS_KEY && export AWS_SECRET_ACCESS_KEY**
+- **terraform init**
+- **terraform plan**
+- **terraform fmt -recursive**
+- **terraform validate**
+- Ne pas oublier de update .gitignore pour la sécu
+### Tester le déploiement en utilisant soit stack_name kubernetes ou stack_name docker
+- **terraform apply -auto-approve**
+
