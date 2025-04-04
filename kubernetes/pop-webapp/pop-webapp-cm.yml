@@ -7,5 +7,5 @@ metadata:
     env: prod
     app: pop-webapp
 data:
-  odoo_url: http://HOST:30010 # HOST est l'ip du serveur de destination où se trouve l'application
-  pgadmin_url: http://HOST:30011
+  odoo_url: http://192.168.1.83:30010 # HOST est l'ip du serveur de destination où se trouve l'application
+  pgadmin_url: http://192.168.1.83:30011

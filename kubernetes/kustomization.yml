@@ -1,5 +1,5 @@
 resources:
-  - ./secret-registry
+  #- ./secret-registry
   - ./database
   - ./odoo
   - ./pgadmin

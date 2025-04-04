@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ic-webapp
+  name: pop-webapp
   namespace: popgroup
   labels:
     env: prod
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: pop-webapp
-        image: pop-webapp:1.0 #créer en local l'image pop-webapp ou bien le déployer sur dockerhub repository/pop-webapp:1.0
+        image: ulrichsteve/ic-webapp:1.0
         env:
         - name: ODOO_URL
           valueFrom:
@@ -29,11 +29,9 @@ spec:
             configMapKeyRef:
               key: pgadmin_url
               name: pop-webapp-cm
-        # resources:
-        #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 8080
-#        imagePullSerets:
-#          - name: github-regcred
