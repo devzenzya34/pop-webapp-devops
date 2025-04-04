@@ -8,7 +8,7 @@ username = "ubuntu"
 
 protocol = "tcp"
 
-key_name = "keypair_pop_project"
+# key_name = "keypair_pop_project"
 
 region = "us-east-1"
 

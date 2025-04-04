@@ -12,7 +12,7 @@ variable "security_groups_ports" {}
 
 variable "instance_type" {}
 
-variable "key_name" {}
+# variable "key_name" {}
 
 # variable "security_groups_name" {}
 
