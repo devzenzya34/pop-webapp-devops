@@ -10,7 +10,7 @@ data "aws_ami" "ubuntu" {
 locals {
   ami_id        = data.aws_ami.ubuntu.id
   filename      = "./keypair/${var.stack_name}.pem"
-  instance_name = "var.stack_name"
+  instance_name = var.stack_name
 }
 
 module "keypair" {
