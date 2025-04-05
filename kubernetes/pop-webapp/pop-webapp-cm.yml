@@ -7,5 +7,5 @@ metadata:
     env: prod
     app: pop-webapp
 data:
-  odoo_url: http://HOST:30010
-  pgadmin_url: http://HOST:30011
+  odoo_url: http://54.243.24.7:30010
+  pgadmin_url: http://54.243.24.7:30011
