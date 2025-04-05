@@ -21,9 +21,9 @@ spec:
         env:
         - name: USER
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               key: user
-              name: odoo-cm
+              name: odoo-secret
         - name: PASSWORD
           valueFrom:
             secretKeyRef:
@@ -34,22 +34,26 @@ spec:
             configMapKeyRef:
               key: host
               name: odoo-cm
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
         ports:
         - containerPort: 8069
         volumeMounts:
-        - name: odoo-persistent-storage
+        - name: odoo-persitent-storage
           mountPath: /var/lib/odoo
-        - name: odoo-persistent-storage-odoo
+        - name: odoo-persitent-storage-odoo
           mountPath: /etc/odoo
-        - name: odoo-persistent-storage-extras
+        - name: odoo-persitent-storage-extras
           mountPath: /mnt/extra-addons
       volumes:
-      - name: odoo-persistent-storage
+      - name: odoo-persitent-storage
         persistentVolumeClaim:
           claimName: odoo-pvc
-      - name: odoo-persistent-storage-odoo
+      - name: odoo-persitent-storage-odoo
         hostPath:
           path: /data-odoo/config
-      - name: odoo-persistent-storage-extras
+      - name: odoo-persitent-storage-extras
         hostPath:
           path: /data-odoo/addons

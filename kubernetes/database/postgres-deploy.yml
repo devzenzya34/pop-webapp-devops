@@ -34,18 +34,9 @@ spec:
             configMapKeyRef:
               key: user
               name: postgres-cm
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
         ports:
         - containerPort: 5432
-#        resources:
-#          limits:
-#            memory: "128Mi"
-#            cpu: "500m"
-#        ports:
-#        - containerPort: 5432
-#        volumeMounts:
-#        - name: postgres-storage
-#          mountPath: /var/lib/postgresql/data
-#      volumes:
-#      - name: postgres-storage
-#        persistentVolumeClaim:
-#          claimName: postgres-pvc

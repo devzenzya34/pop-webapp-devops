@@ -11,8 +11,8 @@ data:
     {
       "Servers": {
         "1": {
-          "Name": "pop-webapp-server1",
-          "Group": "Server Group 1",
+          "Name": "postgres-odoo",
+          "Group": "postgres-odoo-group",
           "Port": 5432,
           "Host": "postgres-svc",
           "SSLMode": "prefer",
