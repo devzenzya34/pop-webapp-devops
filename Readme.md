@@ -46,3 +46,5 @@ Lancer les services dans cette ordre:
 ### Tester le déploiement en utilisant soit stack_name kubernetes ou stack_name docker
 - **terraform apply -auto-approve**
 
+
+## Partie 3: Kubernetes

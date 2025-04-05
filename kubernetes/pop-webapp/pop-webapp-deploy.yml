@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pop-webapp
+  labels:
+    env: prod 
+    app: pop-webapp
+spec:
+  selector:
+    matchLabels:
+      app: pop-webapp
+  template:
+    metadata:
+      labels:
+        app: pop-webapp
+    spec:
+      containers:
+      - name: pop-webapp
+        image: ulrichsteve/ic-webapp:1.0
+        env:
+        - name: ODOO_URL 
+          valueFrom: 
+            configMapKeyRef:
+              key: odoo_url 
+              name: pop-webapp-cm
+        - name: PGADMIN_URL 
+          valueFrom:
+            configMapKeyRef:
+              key: pgadmin_url 
+              name: pop-webapp-cm
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 8080
