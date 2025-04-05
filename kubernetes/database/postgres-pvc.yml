@@ -2,10 +2,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: postgres-pvc
+  namespace: popgroup
   labels:
     env: prod
     app: postgres
-    type: local
 spec:
   resources:
     requests:

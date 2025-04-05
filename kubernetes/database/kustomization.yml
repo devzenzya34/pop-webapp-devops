@@ -3,5 +3,5 @@ resources:
   - postgres-secret.yml
   - postgres-deploy.yml
   - postgres-svc.yml
-  - postgres-pv.yml
-  - postgres-pvc.yml
+#  - postgres-pv.yml
+#  - postgres-pvc.yml

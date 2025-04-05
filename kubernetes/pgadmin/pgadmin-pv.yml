@@ -12,7 +12,5 @@ spec:
     storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Delete
-  storageClassName: manual
   hostPath:
     path: /data-pgadmin

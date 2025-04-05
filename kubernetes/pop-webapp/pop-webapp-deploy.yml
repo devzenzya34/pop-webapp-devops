@@ -29,9 +29,9 @@ spec:
             configMapKeyRef:
               key: pgadmin_url
               name: pop-webapp-cm
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
-        - containerPort: 8080
+          - containerPort: 8080
+#        resources:
+#          limits:
+#            memory: "128Mi"
+#            cpu: "500m"
