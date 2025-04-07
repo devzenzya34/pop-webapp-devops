@@ -4,7 +4,7 @@ pipeline {
         DOCKERFILE_NAME = "Dockerfile"
         DOCKER_DIR = "./webapp"
         DOCKER_IMAGE = "pop-webapp"
-        DOCKER_TAG = "1.1"
+        DOCKER_TAG = "1.0"
         DOCKERHUB_ID = "devzenzya34"
         DOCKERHUB_PASSWORD = credentials('dockerhub_pwd')
         PORT_APP = "8080"
