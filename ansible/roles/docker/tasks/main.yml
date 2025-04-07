@@ -1,2 +1,42 @@
 ---
 # tasks file for docker
+- name: Update ubuntu
+  apt:
+    update_cache: yes
+    upgrade: dist
+    autoremove: yes
+    autoclean: yes
+  become: yes
+  become_method: sudo
+
+- name: download docker script
+  get_url:
+    url: https://get.docker.com
+    dest: /tmp/get-docker.sh
+    mode: '0755'
+
+- name: install docker
+  shell: /tmp/get-docker.sh
+  become: yes
+  become_method: sudo
+
+- name: start docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: check docker group
+  group:
+    name: docker
+    state: present
+  become: yes
+  notify: restart docker service
+
+- name: add user to docker group
+  user:
+    name: {{ ansible_user }}
+    groups: docker
+    append: yes
+  become: yes
+  notify: restart docker service
