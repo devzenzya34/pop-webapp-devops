@@ -80,7 +80,6 @@ faire attention au restirction de firewall sur le cluster kubernetes et la machi
     option 2: deployer l'app dans un réseau bien précis avec un template
   4- écrire les roles pour odoo
   5- écrire les roles pour pgadmin
-  6- Deployer la stack applicative sur la machine de deploiement (vérifier la configuration de ansible)
   
 ## Partie 5 PIPELINE CI/CD
     ### BUILD -> INFRA -> IAC
@@ -88,11 +87,16 @@ faire attention au restirction de firewall sur le cluster kubernetes et la machi
     ### DEPLOY -> Ansible
     ### ORCHESTRATION -> k3s
 
-  1- ecrire le jenkins file
-  2-installer jenkins container avec un compose file et initialiser avec **docker exec -it jenkins_ds cat /var/jenkins_home/secrets/initialAdminPassword**
-  3- configurer et installer les plugins nécessaires
-  4- créer un user et le configurer
-  5- Installer les plugins nécessaires pour le pipeline : Docker, Docker commons, Pipeline, build Step and compose build step
-  6- Récupérer un token sur docker uhb
-  6- créer un pipeline et le configurer
+  - 1- ecrire le jenkins file
+  - 2-installer jenkins container avec un compose file et initialiser avec **docker exec -it jenkins_ds cat /var/jenkins_home/secrets/initialAdminPassword**
+  - 3- configurer et installer les plugins nécessaires
+  - 4- créer un user et le configurer
+  - 5- Installer les plugins nécessaires pour le pipeline : Docker, Docker commons, Pipeline, build Step and compose build step
+  - 6- Récupérer un token sur docker uhb
+  - 7- créer un pipeline et le configurer
+  - 8- configurer les credentials dans jenkins pour aws et dockerhub
+
+## To do 
+  - Ajouter un script pour gérer les IP des instances 
+  - (update inventory, update terraform, update ansible)
 
