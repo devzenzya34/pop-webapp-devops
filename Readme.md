@@ -80,3 +80,11 @@ faire attention au restirction de firewall sur le cluster kubernetes et la machi
     option 2: deployer l'app dans un réseau bien précis avec un template
   4- écrire les roles pour odoo
   5- écrire les roles pour pgadmin
+  6- Deployer la stack applicative sur la machine de deploiement (vérifier la configuration de ansible)
+  
+## Partie 5 PIPELINE CI/CD
+    ### BUILD -> INFRA -> IAC
+    ### APP -> Terraform
+    ### DEPLOY -> Ansible
+    ### ORCHESTRATION -> k3s
+
