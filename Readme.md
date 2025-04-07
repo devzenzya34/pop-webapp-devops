@@ -48,3 +48,8 @@ Lancer les services dans cette ordre:
 
 
 ## Partie 3: Kubernetes
+
+## Partie 3 Ansible
+1- Créer une machine virtuelle sur aws pour installer l'outil ansible la stack applicative sur une autre machine déployer avec terraform
+  Création d'une instance ansible (vpc):
+    ubuntu - T2 médium - pair de clés - set All traffic (edit security group)
