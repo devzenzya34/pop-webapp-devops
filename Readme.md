@@ -62,4 +62,7 @@ tester la connection avec : **ssh -i terraform/keypair/kubernetes.pem ubuntu@ins
     vérifier le path de la pair de clé dans ansible.cfg et modifier la permission du fichier **sudo chmod 400 ../terraform/keypair/kubernetes.pem**
     testing ping server distant **ansible all -m ping**
 
-4- Avoir kubectl d'installer sur la machine local et créer un namespace pour la stack kubernetes avant de
+4- Avoir kubectl d'installer sur la machine local et créer un namespace pour la stack kubernetes avant de deployer
+faire attention au restirction de firewall sur le cluster kubernetes et la machine de déploiement
+5- Deployer la stack applicative sur le cluster kubernetes
+    **ansible-playbook -i hosts playbooks/main.yml**
