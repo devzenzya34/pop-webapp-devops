@@ -1,6 +1,0 @@
----
-- name: Apply Kubernetes manifests file
-  hosts: localhost
-  tasks:
-    - name: Apply Kubernetes manifests
-      command: "kubectl --kubeconfig={{ playbook_dir }}/../kubeconfig/kubeconfig apply -k {{ playbook_dir }}/../../kubernetes --validate=false --insecure-skip-tls-verify"

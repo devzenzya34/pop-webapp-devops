@@ -9,7 +9,7 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y git \
     && pip3 install flask
 
-COPY .. /opt/
+COPY . /opt/
 
 #RUN rm -r Readme.md *.pdf
 
