@@ -1,2 +1,22 @@
 ---
 # tasks file for pop-webapp
+- name: Install docker-pip
+  package:
+    name: python3-docker
+    state: present
+
+- name: Create network
+  docker_network:
+    name: pop-network
+
+- name: run pop-webapp
+  docker_container:
+    name: "{{ pop_container_name }}"
+    image: "{{ pop_image }}"
+    ports:
+      - "{{ pop_port }}:8080"
+    env:
+      ODOO_URL: "{{ odoo_url }}"
+      PGADMIN_URL: "{{ pgadmin_url }}"
+    networks:
+      - name: "{{ network }}"

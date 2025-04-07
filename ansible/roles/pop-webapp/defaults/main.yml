@@ -1,2 +1,8 @@
 ---
 # defaults file for pop-webapp
+network: pop-network
+pop_container_name: pop-webapp
+pop_image: "ulrichsteve/pop-webapp:1.0"
+pop_port: 8081
+odoo_url: http://{{ ansible_host }}:8069
+pgadmin_url: http://{{ ansible_host }}:8082
