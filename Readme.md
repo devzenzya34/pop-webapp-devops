@@ -51,7 +51,7 @@ tester la connection avec : **ssh -i terraform/keypair/kubernetes.pem ubuntu@ins
 
 ## Partie 3: Kubernetes
 
-## Partie 3 Ansible
+## Partie 4 Ansible
 1- Créer une machine virtuelle sur aws pour installer l'outil ansible la stack applicative sur une autre machine déployer avec terraform
   Création d'une instance ansible (vpc):
     ubuntu - T2 médium - pair de clés - set All traffic (edit security group)
@@ -66,3 +66,8 @@ tester la connection avec : **ssh -i terraform/keypair/kubernetes.pem ubuntu@ins
 faire attention au restirction de firewall sur le cluster kubernetes et la machine de déploiement
 5- Deployer la stack applicative sur le cluster kubernetes
     **ansible-playbook -i hosts playbooks/main.yml**
+  
+    La webapp est accessible sur l'url http://IP_public:30012
+                  odoo_url: http://IP_public:30010
+                  pgadmin_url: http://IP_public:30011
+    update with a script to fetch IP_public from terraform/ip_addr/kubernetes_ip.txt and add it on ansible/host_vars/k3s.yml and kubernetes/pop-webapp/pop-webapp-cm.yml
