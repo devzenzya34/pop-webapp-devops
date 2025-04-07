@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE = "pop-webapp"
         DOCKER_TAG = "1.1"
         DOCKERHUB_ID = "devzenzya34"
-        DOCKERHUB_PASSWORD = credentials('dockerhub_password')
+        DOCKERHUB_PASSWORD = credentials('dockerhub_pwd')
         PORT_APP = "8080"
         PORT_EXT = "8090"
         IP = "172.17.0.1" //defalut docker ip on linux

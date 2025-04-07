@@ -88,3 +88,11 @@ faire attention au restirction de firewall sur le cluster kubernetes et la machi
     ### DEPLOY -> Ansible
     ### ORCHESTRATION -> k3s
 
+  1- ecrire le jenkins file
+  2-installer jenkins container avec un compose file et initialiser avec **docker exec -it jenkins_ds cat /var/jenkins_home/secrets/initialAdminPassword**
+  3- configurer et installer les plugins nécessaires
+  4- créer un user et le configurer
+  5- Installer les plugins nécessaires pour le pipeline : Docker, Docker commons, Pipeline, build Step and compose build step
+  6- Récupérer un token sur docker uhb
+  6- créer un pipeline et le configurer
+
