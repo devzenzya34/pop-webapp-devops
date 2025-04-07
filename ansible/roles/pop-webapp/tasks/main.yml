@@ -7,7 +7,7 @@
 
 - name: Create network
   docker_network:
-    name: pop-network
+    name: "{{ network }}"
 
 - name: run pop-webapp
   docker_container:

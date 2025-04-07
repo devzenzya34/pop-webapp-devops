@@ -1,2 +1,13 @@
 ---
 # defaults file for odoo
+odoo_name: odoo_web
+odoo_image: odoo:17.0
+network: "{{ network }}"
+odoo_port: 8069
+odoo_volume_name: odoo-web-data
+odoo_database_name: odoo-db-data
+database_name: odoo_database
+database_image: postgres:15
+database_user: odoo
+database_password: pwdodoo
+#database_port: 5432
