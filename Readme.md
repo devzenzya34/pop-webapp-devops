@@ -71,3 +71,12 @@ faire attention au restirction de firewall sur le cluster kubernetes et la machi
                   odoo_url: http://IP_public:30010
                   pgadmin_url: http://IP_public:30011
     update with a script to fetch IP_public from terraform/ip_addr/kubernetes_ip.txt and add it on ansible/host_vars/k3s.yml and kubernetes/pop-webapp/pop-webapp-cm.yml
+
+  ### Manage ansible-roles (Déployer la stack docker sur la machine de déploiement)
+  1- Initier les roles pour chaque service
+  2- écrire les roles docker
+  3- écrire les roles pour pop-webapp:
+    option 1: deployer l'app dans un réseau bien précis (pop_network) avec la commande run
+    option 2: deployer l'app dans un réseau bien précis avec un template
+  4- écrire les roles pour odoo
+  5- écrire les roles pour pgadmin
