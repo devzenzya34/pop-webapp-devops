@@ -46,6 +46,8 @@ Lancer les services dans cette ordre:
 ### Tester le déploiement en utilisant soit stack_name kubernetes ou stack_name docker
 - **terraform apply -auto-approve**
 
+tester la connection avec : **ssh -i terraform/keypair/kubernetes.pem ubuntu@instance_ip**
+
 
 ## Partie 3: Kubernetes
 
@@ -53,3 +55,14 @@ Lancer les services dans cette ordre:
 1- Créer une machine virtuelle sur aws pour installer l'outil ansible la stack applicative sur une autre machine déployer avec terraform
   Création d'une instance ansible (vpc):
     ubuntu - T2 médium - pair de clés - set All traffic (edit security group)
+
+2- écrire les playbooks
+
+3- vérifier les hosts_vars et s'assurer que ansible est bien installé sur la machine local 
+    vérifier le path de la pair de clé dans ansible.cfg et modifier la permission du fichier **sudo chmod 400 ../terraform/keypair/kubernetes.pem**
+    testing ping server distant **ansible all -m ping**
+
+4- Avoir kubectl d'installer sur la machine local et créer un namespace pour la stack kubernetes avant de deployer
+faire attention au restirction de firewall sur le cluster kubernetes et la machine de déploiement
+5- Deployer la stack applicative sur le cluster kubernetes
+    **ansible-playbook -i hosts playbooks/main.yml**

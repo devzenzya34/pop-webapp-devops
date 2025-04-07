@@ -1,0 +1,3 @@
+# ip du serveur terraform
+ansible_host: 54.146.213.217
+ansible_user: ubuntu
